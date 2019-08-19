@@ -11,6 +11,14 @@
   $usuario = $crud->buscar($_GET['codigo']);
 ?>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Usuarios</a></li>
+    <li class="breadcrumb-item"><a href="listado_usuario.php">Lista de usuarios</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Modificar usuarios</li>
+  </ol>
+</nav>
+
 <div class="">
                   <span class="h2">Modificar usuario</span>
                 </div><hr/>

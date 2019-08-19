@@ -8,6 +8,8 @@
 
     <title>Sistema administrativo</title>
 
+    
+
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
@@ -92,6 +94,21 @@
                 </li>
 
                 <li>
+                    <a href="#ventaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-shopping-cart"></i> Ventas
+                    </a>
+                    <ul class="collapse list-unstyled" id="ventaSubmenu">
+                        <li>
+                            <a href="venta_nueva.php"><i class="fas fa-money-bill-wave"></i> Nueva venta</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-money-check-alt"></i> Registro de ventas</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+                <li>
                     <a href="#">Configuracion</a>
                 </li>
                 <li>
@@ -103,7 +120,7 @@
 
             <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="#" class="download">Portafolio</a>
+                    <a href="https://github.com/jyagami/sistema1" class="download">Proyecto</a>
                 </li>
                 <li>
                     <a href="#" class="article">Sobre la empresa</a>

@@ -1,10 +1,7 @@
 <?php
-
     
     class Conexion{
         
-        
-
         private static $conexion = NULL;
         private function __construct(){
             session_start();
@@ -16,7 +13,6 @@
             $db_usuario = 'root';
             $db_contraseña = '';
             
-
             $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
             self::$conexion = new PDO($dns, $db_usuario, $db_contraseña, $pdo_options);
             

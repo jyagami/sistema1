@@ -21,17 +21,26 @@ $cantidadUsuarios = $crud->cantidadRegistros();
               </div>
             <?php session_unset(); }?>
 
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Usuarios</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Lista de empleados</li>
+    </ol>
+  </nav>
+
 <span class="h2 p-3">Listado de empleados</span><hr/>
-         <div class="input-group mb-3 col-md-6">
-          <input type="text" class="form-control" placeholder="Codigo, nombre, apellido..." >
-          <div class="input-group-append">
-            <button class="btn btn-dark" type="button">Buscar <i class="fas fa-search"></i></button>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalNuevo">Nuevo <i class="fas fa-user-plus"></i></button>
-          </div>
-        </div>
-        <div class="table-responsive">
+            
+        <form class="input-group mb-3 col-md-6">
+            <input type="search" class="form-control" placeholder="Codigo, nombre, apellido..." id="search-user" autofocus>
+            <div class="input-group-append">
+              <button class="btn btn-dark" type="submit">Buscar <i class="fas fa-search"></i></button>
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalNuevo">Nuevo <i class="fas fa-user-plus"></i></button>
+            </div>
+        </form>
+
+        <div class="table-responsive" style="max-height: 600px;">
         <table class="table">
-                    <thead class="thead-dark ">
+                    <thead class="thead-dark">
                       <tr>
                         <th scope="col">#Codigo</th>
                         <th scope="col">Nombres</th>
@@ -45,7 +54,7 @@ $cantidadUsuarios = $crud->cantidadRegistros();
                         <th scope="col"></th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tabla-usuarios">
                         <?php foreach($listaUsuarios as $usuario){?>
                           <tr>
                           <th scope="row"> <?php echo $usuario->getCodigo()?></th>
@@ -55,7 +64,7 @@ $cantidadUsuarios = $crud->cantidadRegistros();
                           <td> <?php echo $usuario->getPuesto()?></td>
                           <td> <?php echo $usuario->getCorreo()?></td>
                           <td> <?php echo $usuario->getContrasena()?></td>
-                          <td >
+                          <td>
                           <div class="btn-group" >
                             <button class="btn btn-outline-dark" type="button" data-toggle="modal"
                             <?php echo 'data-target="#modal-'.$usuario->getCodigo().'"' ?> > <i class="far fa-address-book"></i></button>
@@ -75,6 +84,7 @@ $cantidadUsuarios = $crud->cantidadRegistros();
         </div>
         
         </div>
+
                         
 <!--  Modal ver usuario   -->
 <?php foreach($listaUsuarios as $usuario){?>
@@ -115,7 +125,8 @@ $cantidadUsuarios = $crud->cantidadRegistros();
   </div>
 </div>
 
-<?php }?>  
+<?php }?> 
+ 
 
 <!-- Modal Nuevo registro-->
 <div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -182,5 +193,8 @@ $cantidadUsuarios = $crud->cantidadRegistros();
     </div>
   </div>
 </div>
+
+
+
 
 <?php include 'include/footer.php' ?>
