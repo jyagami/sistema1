@@ -12,12 +12,12 @@
         
             <form action="">
             <button type="submit" value="Venta" class="btn btn-success mb-3">Realizar venta <i class="fas fa-hand-holding-usd"></i></button>
-                    
+            <button class="btn btn-primary" id="total-venta" >Totalizar venta</button>        
                 <div class="float-right flex-row">
-                    <span class="h5"> TOTAL <p class="text-danger">50 USD$</p></span>
+                    <span class="h5" id="venta-total"> TOTAL <p class="text-danger">50 USD$</p></span>
                 </div>
                 <div class="table-responsive" style="max-height: 475px;" id="tabla-venta">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="tabla-venta">
                         <thead>
                             <tr>
                             <th scope="col">Producto</th>
@@ -27,14 +27,8 @@
                             <th scope="col">Total</th>
                             </tr>
                         </thead>
-                        <tbody id="tabla-cuerpo">
-                            <tr>
-                                <th>Teclado</th>
-                                <td>e touch</td>
-                                <th>23 USD$</td>
-                                <td><input type="number" placeholder="Cantidad" class="form-control"></td>
-                                <th>23 USD$</th>
-                            </tr>
+                        <tbody id="tabla-cuerpo-venta">
+                            
                             
                             
                         </tbody>
@@ -55,25 +49,19 @@
                 </div>
             <div class="table-responsive" style="max-height: 475px;">
                 
-                <table class="table">
+                <table class="table" id="tabla-producto">
                     <thead class="bg-dark text-white ">
                         <tr>
                             <th scope="col">Producto</th>
                             <th scope="col">Marca</th>
-                            <th scope="col">Costo/u</th>
+                            <th scope="col">Precio/u</th>
                             <th scope="col">Stock</th>
                             <th scope="col">Acciones</th>
                         </tr>    
                     </thead>
-                    <tbody>
+                    <tbody id="tabla-producto-venta">
                         <tr>
-                            <td>Monitor</td>
-                            <td>Samsung</td>
-                            <td>135 USD$</td>
-                            <td>23</td>
-                            <td><button class="btn btn-primary" id="add-product">+<i class="fas fa-cart-plus"></i></button>
-                                <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                            </td>
+                            
                         </tr>
                     </tbody>
                     
@@ -85,7 +73,8 @@
     
 </div>
 <!-- script basura para llenar la tabla de venta-->
-<script src="scripts/myScript.js" ></script>
+<!--  <script src="scripts/myScript.js" ></script>  -->
+
 
 
 

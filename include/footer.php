@@ -16,8 +16,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- My Script -->   
+    <!-- My Script -->
+    <script src="scripts/venta.js"></script>    
     <script src="scripts/ajax.js"></script> 
+    <script src="scripts/productos.js"></script>
     <script src="scripts/sidebar.js"></script>
     
     

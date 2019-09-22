@@ -56,7 +56,7 @@ require_once('conexion.php');
             $eliminar->bindValue('codigo', $codigo);
             $eliminar->execute();
         }
-
+        
         //metodo para actualizar informacion
         public function actualizar($usuario){
             $con_db = Conexion::conectar();

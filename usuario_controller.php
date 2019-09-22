@@ -6,7 +6,7 @@
     $crud = new CrudUsuario();
     $usuario = new Usuario();
 
-    //si el elemento insertar no es NULL llama al crud e incerta un usuario
+    //si el elemento insertar no es NULL llama al crud e inserta un usuario
     if (isset($_POST['insertar'])){
         
         $usuario->setCodigo($_POST['codUsuario']);
@@ -43,5 +43,10 @@
     elseif ($_GET['accion']=='actualizar'){
         header('Location: editar_usuario.php');
     }
+    elseif (isset($_POST['codigoUser'])){
+        $codUser = $_POST['codigoUser'];
+        $crud->eliminar($codUser);
+    }
+    
 
 ?>

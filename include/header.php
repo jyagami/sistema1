@@ -72,7 +72,7 @@
                             <a href="registro_producto.php">Nuevo producto</a>
                         </li>
                         <li>
-                            <a href="#">Lista de productos</a>
+                            <a href="listado_productos.php">Lista de productos</a>
                         </li>
                         
                     </ul>

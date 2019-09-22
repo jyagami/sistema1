@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<style>
+	#tabla1,
+	#tabla2 {border:1px solid;width:100px;float:left;}
+	#tabla2 {margin-left:10px;}
+	</style>
+</head>
+<body>
+	<table id="tabla1">
+		<tbody>
+			<tr id="a1">
+				<td>texto1</td>
+				<td class="check"><input name="" type="checkbox"></td>
+			</tr>
+			<tr id="a2">
+				<td>texto2</td>
+				<td class="check"><input name="" type="checkbox"></td>
+			</tr>
+			<tr id="a3">
+				<td>texto3</td>
+				<td class="check"><input name="" type="checkbox"></td>
+			</tr>
+		</tbody>
+	</table>
+ 
+	<table id="tabla2">
+		<tbody>
+		</tbody>
+	</table>
+</body>
+</html>
+ 
+<script>
+$(document).ready(function(){
+	$('input[type=checkbox]').click(function() {
+		if($(this).is(":checked"))
+		{
+			// el checkbox esta marcado
+			// movemos la columna a la tabla2
+			var tr=$(this).parents("tr").appendTo("#tabla2 tbody");
+		}else{
+			// el checkbox esta desmarcado
+			// movemos la columna a la tabla1
+			var tr=$(this).parents("tr").appendTo("#tabla1 tbody");
+		}
+	});
+});
+</script>
