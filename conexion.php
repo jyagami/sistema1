@@ -9,7 +9,7 @@
         
         //conectando a la base de datos usando PDO
         public static function conectar(){
-            $dns = 'mysql:host=localhost;dbname=sistema1';
+            $dns = 'mysql:host=localhost;dbname=sistema2';
             $db_usuario = 'root';
             $db_contraseña = '';
             

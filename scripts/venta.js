@@ -23,41 +23,50 @@ $(document).ready(function () {
             }
         })
     }
+    
     //agregar productos a venta
-    var colPlus = "";
+    var tot = 0,
+        thTot = `<th id="totalUnitario">${tot} USD$</th>`;
     $(document).on('click', '#add-venta', function () {
-        //obtenemos los atributos de la tabla productos
-        let elemento = $(this)[0].parentElement.parentElement;
-        let nombreProducto = $(elemento).attr('nameProduct');
-        let marcaProducto = $(elemento).attr('marcaProduct');
-        let costoProducto = $(elemento).attr('costoProduct');
-        let codigoProducto = $(elemento).attr('idProducto');
-        console.log(codigoProducto);
-
-        //totalizamos la venta
-        var totalVenta = 0;
-        var tot = 0;
-        $("#total-venta").click(function (e) {
-            var cant = $("#cantidad").val();
-            var cost = $("#costoId").val();
-            tot = cant * cost;
-            console.log(tot);
-            totalVenta += tot;
-            e.preventDefault();
-        });
-
-        //llenamos la tabla venta
-        let columna = "";
-        columna = `<tr>
-            <th>${nombreProducto}</th>
-            <td>${marcaProducto}</td>
-            <th><input id="costoId" type="text" value="${costoProducto}" style="max-width:70px;" class="form-control" readonly></th>
-            <td><input id="cantidad" type="number" placeholder="Cantidad" class="form-control"></td>
-            <th>${tot} USD$</th>
-        </tr>` + colPlus;
-
-        $('#tabla-cuerpo-venta').html(columna);
-        colPlus = columna;
+         //obtenemos los atributos de la tabla productos
+         let elemento = $(this)[0].parentElement.parentElement;
+         let nombreProducto = $(elemento).attr('nameProduct');
+         let marcaProducto = $(elemento).attr('marcaProduct');
+         let costoProducto = $(elemento).attr('costoProduct');
+         let codigoProducto = $(elemento).attr('idProducto');
+         
+         //<th><input id="costoId" type="number" value="${costoProducto}" style="max-width:70px;" class="form-control" readonly></th>
+             
+         let columna = "";
+         columna = `<tr id="productoActual">
+             <th id="xProduct"><span class="badge badge-danger">x</span> ${nombreProducto}</th>
+             <td>${marcaProducto}</td>
+             <th><span id="costoId" style="max-width:70px;" class="form-control">${costoProducto}</span></th>
+             <td><input id="cantidad" type="number" placeholder="Cantidad" class="form-control"></td>
+             ${thTot}
+         </tr>`;
+         $('#tabla-cuerpo-venta').before(columna);
     })
-
+    //eliminar producto de la venta
+    $(document).on('click','#xProduct', function(){
+        var producto = this.parentElement;
+        producto.remove();
+        console.log(producto);
+    })
+    //totalizar venta unitaria
+    $(document).on('click', '#cantidad', function(){
+        var $cantidad = $(this).val(),
+            $costo = $(this).parent().parent().children().eq(2).text();
+            //$(this.parentElement.parentElement.children[2]);
+        tot = $cantidad * $costo;
+        
+        var $tdTotal = $(this).parent();
+        thTot = `<th id="totalUnitario">${tot} USD$</th>`,
+        $tdTotal.after(thTot);
+        
+        var thTotalTemporal = $(this).parent().parent().find('th').last();
+        thTotalTemporal.remove();
+        
+    });
+    
 });//fin document ready

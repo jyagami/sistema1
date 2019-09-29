@@ -12,7 +12,6 @@
         
             <form action="">
             <button type="submit" value="Venta" class="btn btn-success mb-3">Realizar venta <i class="fas fa-hand-holding-usd"></i></button>
-            <button class="btn btn-primary" id="total-venta" >Totalizar venta</button>        
                 <div class="float-right flex-row">
                     <span class="h5" id="venta-total"> TOTAL <p class="text-danger">50 USD$</p></span>
                 </div>
@@ -28,8 +27,6 @@
                             </tr>
                         </thead>
                         <tbody id="tabla-cuerpo-venta">
-                            
-                            
                             
                         </tbody>
                     </table>
@@ -72,6 +69,15 @@
     </div>
     
 </div>
+<!-- jQuery CDN - Slim version 3.4.1-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script>
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    
+</script>
 <!-- script basura para llenar la tabla de venta-->
 <!--  <script src="scripts/myScript.js" ></script>  -->
 
